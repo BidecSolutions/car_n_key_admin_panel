@@ -39,7 +39,7 @@ const PermissionsList = ({
     },
     {
       title: 'Module Name',
-      dataIndex: 'module_name',
+      dataIndex: 'module',
       key: 'module',
       sorter: true,
     },
@@ -54,7 +54,7 @@ const PermissionsList = ({
       key: 'actions',
       render: (_, record) => (
         <Space size="middle">
-          {permissions.includes("permission.edit") && (
+          {/* {permissions.includes("permission.edit") && ( */}
 
           <Button
             type="primary"
@@ -64,8 +64,8 @@ const PermissionsList = ({
           >
             Edit
           </Button>
-          )}
-          {permissions.includes("permission.delete") && (
+          {/* )} */}
+          {/* {permissions.includes("permission.delete") && ( */}
 
           <Popconfirm
             title="Are you sure you want to delete this permission?"
@@ -84,7 +84,7 @@ const PermissionsList = ({
               Delete
             </Button> 
           </Popconfirm>
-          )}
+          {/* )} */}
         </Space>
       ),
     },

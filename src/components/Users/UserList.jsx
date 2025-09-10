@@ -22,39 +22,58 @@ const UsersList = ({
   };
   const { permissions } = useRoles();
 
-  const columns = [
-    {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
-      sorter: true,
-      render: (text) => <strong>{text}</strong>,
-    },
-    {
-      title: 'Email',
-      dataIndex: 'email',
-      key: 'email',
-    },
-    {
-      title: 'phone',
-      dataIndex: 'phone',
-      key: 'phoneole',
-     
-    },
-    {
-  title: 'Status',
-  dataIndex: 'status',
-  key: 'status',
-  render: (status) =>
-    status === 1 ? <Tag color="green">Active</Tag> : <Tag color="red">Inactive</Tag>,
-},
-    {
-      title: 'Actions',
-      key: 'actions',
-      render: (_, record) => (
-        <Space size="middle">
-          {permissions.includes("admin.edit") && (
-
+const columns = [
+  {
+    title: "ID",
+    dataIndex: "id",
+    key: "id",
+  },
+  {
+    title: "Name",
+    key: "name",
+    render: (_, record) => (
+      <strong>{`${record.firstName} ${record.lastName}`}</strong>
+    ),
+  },
+  {
+    title: "Email",
+    dataIndex: "email",
+    key: "email",
+  },
+  {
+    title: "Guard",
+    dataIndex: "guard",
+    key: "guard",
+  },
+  {
+    title: "Status",
+    dataIndex: "status",
+    key: "status",
+    render: (status) =>
+      status ? (
+        <Tag color="green">Active</Tag>
+      ) : (
+        <Tag color="red">Inactive</Tag>
+      ),
+  },
+  {
+    title: "Created At",
+    dataIndex: "createdAt",
+    key: "createdAt",
+    render: (date) => new Date(date).toLocaleString(),
+  },
+  {
+    title: "Updated At",
+    dataIndex: "updatedAt",
+    key: "updatedAt",
+    render: (date) => new Date(date).toLocaleString(),
+  },
+  {
+    title: "Actions",
+    key: "actions",
+    render: (_, record) => (
+      <Space size="middle">
+        {/* {permissions.includes("admin.edit") && ( */}
           <Button
             type="primary"
             icon={<EditOutlined />}
@@ -63,9 +82,8 @@ const UsersList = ({
           >
             Edit
           </Button>
-          )}
-          {permissions.includes("admin.delete") && (
-
+        {/* )} */}
+        {/* {permissions.includes("admin.delete") && ( */}
           <Popconfirm
             title="Are you sure you want to delete this user?"
             description="This action cannot be undone."
@@ -83,11 +101,12 @@ const UsersList = ({
               Delete
             </Button>
           </Popconfirm>
-          )}
-        </Space>
-      ),
-    },
-  ];
+        {/* )} */}
+      </Space>
+    ),
+  },
+];
+
 
   return (
     <Table

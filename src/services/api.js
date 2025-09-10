@@ -67,6 +67,86 @@ export const brandsAPI = {
   toggle_status: (id) => USE_MOCK_DATA ? mockAPI.doctors.put(id) : api.put(`/admin/brands/${id}/toggle-status`),
 };
 
+// BodyType API
+export const bodyTypeAPI = {
+  getAll: () => USE_MOCK_DATA ? mockAPI.doctors.getAll() : api.get('/admin/body-types'),
+  getById: (id) => USE_MOCK_DATA ? mockAPI.doctors.getById(id) : api.get(`/admin/body-types/${id}`),
+  create: (data) => api.post('/admin/body-types', data),
+  update: (id, data) => USE_MOCK_DATA ? mockAPI.doctors.update(id, data) : api.put(`/admin/body-types/${id}`, data),
+  delete: (id) => USE_MOCK_DATA ? mockAPI.doctors.delete(id) : api.delete(`/admin/body-types/${id}`),
+  toggle_status: (id) => USE_MOCK_DATA ? mockAPI.doctors.put(id) : api.put(`/admin/body-types/${id}/toggle-status`),
+};
+
+// FuelType API
+export const fuelTypeAPI = {
+  getAll: () => USE_MOCK_DATA ? mockAPI.doctors.getAll() : api.get('/admin/fuel-types'),
+  getById: (id) => USE_MOCK_DATA ? mockAPI.doctors.getById(id) : api.get(`/admin/fuel-types/${id}`),
+  create: (data) => api.post('/admin/fuel-types', data),
+  update: (id, data) => USE_MOCK_DATA ? mockAPI.doctors.update(id, data) : api.put(`/admin/fuel-types/${id}`, data),
+  delete: (id) => USE_MOCK_DATA ? mockAPI.doctors.delete(id) : api.delete(`/admin/fuel-types/${id}`),
+  toggle_status: (id) => USE_MOCK_DATA ? mockAPI.doctors.put(id) : api.put(`/admin/fuel-types/${id}/toggle-status`),
+};
+
+// EngineType API
+export const engineTypeAPI = {
+  getAll: () => USE_MOCK_DATA ? mockAPI.doctors.getAll() : api.get('/admin/engine-types'),
+  getById: (id) => USE_MOCK_DATA ? mockAPI.doctors.getById(id) : api.get(`/admin/engine-types/${id}`),
+  create: (data) => api.post('/admin/engine-types', data),
+  update: (id, data) => USE_MOCK_DATA ? mockAPI.doctors.update(id, data) : api.put(`/admin/engine-types/${id}`, data),
+  delete: (id) => USE_MOCK_DATA ? mockAPI.doctors.delete(id) : api.delete(`/admin/engine-types/${id}`),
+  toggle_status: (id) => USE_MOCK_DATA ? mockAPI.doctors.put(id) : api.put(`/admin/engine-types/${id}/toggle-status`),
+};
+
+// Vehical Modal API
+export const vehicalModalAPI = {
+  getAll: () => USE_MOCK_DATA ? mockAPI.doctors.getAll() : api.get('/admin/vehicle-models'),
+  getById: (id) => USE_MOCK_DATA ? mockAPI.doctors.getById(id) : api.get(`/admin/vehicle-models/${id}`),
+  create: (data) => api.post('/admin/vehicle-models', data),
+  update: (id, data) => USE_MOCK_DATA ? mockAPI.doctors.update(id, data) : api.put(`/admin/vehicle-models/${id}`, data),
+  delete: (id) => USE_MOCK_DATA ? mockAPI.doctors.delete(id) : api.delete(`/admin/vehicle-models/${id}`),
+  toggle_status: (id) => USE_MOCK_DATA ? mockAPI.doctors.put(id) : api.put(`/admin/vehicle-models/${id}/toggle-status`),
+};
+
+// Feature Modal API
+export const featuresAPI = {
+  getAll: () => USE_MOCK_DATA ? mockAPI.doctors.getAll() : api.get('/admin/features'),
+  getById: (id) => USE_MOCK_DATA ? mockAPI.doctors.getById(id) : api.get(`/admin/features/${id}`),
+  create: (data) => api.post('/admin/features', data),
+  update: (id, data) => USE_MOCK_DATA ? mockAPI.doctors.update(id, data) : api.put(`/admin/features/${id}`, data),
+  delete: (id) => USE_MOCK_DATA ? mockAPI.doctors.delete(id) : api.delete(`/admin/features/${id}`),
+  toggle_status: (id) => USE_MOCK_DATA ? mockAPI.doctors.put(id) : api.put(`/admin/features/${id}/toggle-status`),
+};
+
+// Feature Category Modal API
+export const featureCategoryAPI = {
+  getAll: () => USE_MOCK_DATA ? mockAPI.doctors.getAll() : api.get('/admin/feature-categories'),
+  getById: (id) => USE_MOCK_DATA ? mockAPI.doctors.getById(id) : api.get(`/admin/feature-categories/${id}`),
+  create: (data) => api.post('/admin/feature-categories', data),
+  update: (id, data) => USE_MOCK_DATA ? mockAPI.doctors.update(id, data) : api.put(`/admin/feature-categories/${id}`, data),
+  delete: (id) => USE_MOCK_DATA ? mockAPI.doctors.delete(id) : api.delete(`/admin/feature-categories/${id}`),
+  toggle_status: (id) => USE_MOCK_DATA ? mockAPI.doctors.put(id) : api.put(`/admin/feature-categories/${id}/toggle-status`),
+};
+
+// Trim Modal API
+export const trimAPI = {
+  getAll: () => USE_MOCK_DATA ? mockAPI.doctors.getAll() : api.get('/admin/trims'),
+  getById: (id) => USE_MOCK_DATA ? mockAPI.doctors.getById(id) : api.get(`/admin/trims/${id}`),
+  create: (data) => api.post('/admin/trims', data),
+  update: (id, data) => USE_MOCK_DATA ? mockAPI.doctors.update(id, data) : api.put(`/admin/trims/${id}`, data),
+  delete: (id) => USE_MOCK_DATA ? mockAPI.doctors.delete(id) : api.delete(`/admin/trims/${id}`),
+  toggle_status: (id) => USE_MOCK_DATA ? mockAPI.doctors.put(id) : api.put(`/admin/trims/${id}/toggle-status`),
+};
+
+// Faqs Modal API
+export const faqsAPI = {
+  getAll: () => USE_MOCK_DATA ? mockAPI.doctors.getAll() : api.get('/admin/faqs'),
+  getById: (id) => USE_MOCK_DATA ? mockAPI.doctors.getById(id) : api.get(`/admin/faqs/${id}`),
+  create: (data) => api.post('/admin/faqs/bulk', data),
+  update: (id, data) => USE_MOCK_DATA ? mockAPI.doctors.update(id, data) : api.put(`/admin/faqs/${id}`, data),
+  delete: (id) => USE_MOCK_DATA ? mockAPI.doctors.delete(id) : api.delete(`/admin/faqs/${id}`),
+  toggle_status: (id) => USE_MOCK_DATA ? mockAPI.doctors.put(id) : api.put(`/admin/faqs/${id}/toggle-status`),
+};
+
 // Doctors API
 export const doctorsAPI = {
   getAll: () =>  api.get('/doctors'),
@@ -131,18 +211,18 @@ export const heroAPI = {
 };
 
 export const usersAPI = {
-  getAll: () =>  api.get('/admin/list'),
+  getAll: () =>  api.get('/admin/admins'),
   getById: (id) => USE_MOCK_DATA ? mockAPI.users.getById(id) : api.get(`/users/${id}`),
-  create: (data) =>  api.post('/admin/store', data),
-  update: (id, data) =>  api.post(`/admin/${id}/update`, data),
+  create: (data) =>  api.post('/admin/admins', data),
+  update: (id, data) =>  api.post(`/admin/admins/${id}`, data),
   delete: (id) =>  api.delete(`/admin/${id}/delete`),
 };
 
 export const rolesAPI = {
   getAll: () =>  api.get('/admin/roles'),
-  create: (data) =>  api.post('/admin/create-role', data),
-  update: (id, data) => api.post(`/admin/update-role/${id}`, data),
-  delete: (id) =>  api.delete(`/admin/delete-role/${id}`),
+  create: (data) =>  api.post('/admin/roles', data),
+  update: (id, data) => api.post(`/admin/roles/${id}`, data),
+  delete: (id) =>  api.delete(`/admin/roles/${id}`),
 };
 
 export const AssignRoleAdmins = {
@@ -153,10 +233,10 @@ export const AssignRoleAdmins = {
 };
 
 export const permissionsAPI = {
-  getAll: () => api.get('/admin/permissions/list'),
+  getAll: () => api.get('/admin/permissions'),
   getById: (id) => USE_MOCK_DATA ? mockAPI.permissions.getById(id) : api.get(`/permissions/${id}`),
-  create: (data) =>  api.post('/admin/create-permission', data),
-  update: (id, data) =>  api.post(`/admin/update-permission/${id}`, data),
+  create: (data) =>  api.post('/admin/permissions', data),
+  update: (id, data) =>  api.post(`/admin/permissions/${id}`, data),
   delete: (id) =>api.delete(`/admin/permissions/destroy/${id}`),
 };
 export const customersAPI = {

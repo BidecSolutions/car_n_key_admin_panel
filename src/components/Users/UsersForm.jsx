@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
-import { Form, Input, Button, message, Switch, Select } from "antd";
-
-const { Option } = Select;
+import { Form, Input, Button, message, Switch } from "antd";
 
 const UsersForm = ({
   visible,
@@ -14,10 +12,9 @@ const UsersForm = ({
 
   useEffect(() => {
     if (visible && initialValues) {
-      // edit mode me status ko convert karna zaroori hai
       form.setFieldsValue({
         ...initialValues,
-        status: initialValues.status === 1, // 1 => true, 0 => false
+        status: initialValues.status === true, // true/false mapping
       });
     } else if (visible) {
       form.resetFields();
@@ -26,8 +23,8 @@ const UsersForm = ({
 
   const handleSubmit = async (values) => {
     try {
-      // switch ke value ko backend ke liye int me convert karna
-      values.status = values.status ? 1 : 0;
+      // Convert status to boolean if needed
+      values.status = values.status ? true : false;
 
       await onSubmit(values);
       form.resetFields();
@@ -49,20 +46,31 @@ const UsersForm = ({
       layout="vertical"
       onFinish={handleSubmit}
       initialValues={{
-        role: "user",
-        status: 1, // default active
+        status: true, // default active
       }}
     >
-      {/* Full Name */}
+      {/* First Name */}
       <Form.Item
-        name="name"
-        label="Full Name"
+        name="firstName"
+        label="First Name"
         rules={[
-          { required: true, message: "Please enter full name" },
-          { min: 2, message: "Name must be at least 2 characters" },
+          { required: true, message: "Please enter first name" },
+          { min: 2, message: "First name must be at least 2 characters" },
         ]}
       >
-        <Input placeholder="Enter user's full name" />
+        <Input placeholder="Enter first name" />
+      </Form.Item>
+
+      {/* Last Name */}
+      <Form.Item
+        name="lastName"
+        label="Last Name"
+        rules={[
+          { required: true, message: "Please enter last name" },
+          { min: 2, message: "Last name must be at least 2 characters" },
+        ]}
+      >
+        <Input placeholder="Enter last name" />
       </Form.Item>
 
       {/* Email */}
@@ -76,20 +84,6 @@ const UsersForm = ({
       >
         <Input placeholder="Enter user's email address" />
       </Form.Item>
-
-      {/* Phone */}
-      <Form.Item
-        name="phone"
-        label="Phone"
-        rules={[
-          { required: true, message: "Please enter phone number" },
-          { min: 10, message: "Phone must be at least 10 digits" },
-        ]}
-      >
-        <Input placeholder="Enter user's phone number" />
-      </Form.Item>
-
-      
 
       {/* Password - only for add new */}
       {!initialValues && (
@@ -105,16 +99,12 @@ const UsersForm = ({
         </Form.Item>
       )}
 
-      
-      <Form.Item
-        name="status"
-        label="Status"
-        valuePropName="checked" 
-      >
+      {/* Status */}
+      <Form.Item name="status" label="Status" valuePropName="checked">
         <Switch checkedChildren="Active" unCheckedChildren="Inactive" />
       </Form.Item>
 
-      
+      {/* Buttons */}
       <Form.Item style={{ marginBottom: 0, textAlign: "right" }}>
         <Button onClick={onCancel} style={{ marginRight: 8 }}>
           Cancel

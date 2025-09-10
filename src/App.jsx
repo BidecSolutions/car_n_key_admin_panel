@@ -16,6 +16,14 @@ import Login from './pages/Login';
 import { PermissionProvider } from './Context/PermissionsContext';
 import Color from './pages/Color';
 import Brand from './pages/Brand';
+import BodyType from './pages/BodyType';
+import FuelType from './pages/FuelType';
+import EngineType from './pages/engineType';
+import VehicalModal from './pages/VehicalModals';
+import Features from './pages/Features';
+import FeatureCategory from './pages/FeatureCategory';
+import Trim from './pages/Trim';
+import Faqs from './pages/Faqs';
 
 const App = () => {
   return (
@@ -69,13 +77,93 @@ const App = () => {
                   }
                 />
 
+                 {/* BodyType routes - require body type permissions */}
+                <Route
+                  path="body-types"
+                  element={
+                    // <ProtectedRoute permissions={["doctor."]}>
+                      <BodyType />
+                    // </ProtectedRoute>
+                  }
+                />
+
+                {/* FuelType routes - require fuel type permissions */}
+                <Route
+                  path="fuel-types"
+                  element={
+                    // <ProtectedRoute permissions={["doctor."]}>
+                      <FuelType />
+                    // </ProtectedRoute>
+                  }
+                />
+
+                {/* EngineType routes - require engine type permissions */}
+                <Route
+                  path="engine-types"
+                  element={
+                    // <ProtectedRoute permissions={["doctor."]}>
+                      <EngineType />
+                    // </ProtectedRoute>
+                  }
+                />
+
+                 {/* VehicalModal routes - require engine type permissions */}
+                <Route
+                  path="vehical-modals"
+                  element={
+                    // <ProtectedRoute permissions={["doctor."]}>
+                      <VehicalModal />
+                    // </ProtectedRoute>
+                  }
+                />
+
+                   {/* Faqs routes - require engine type permissions */}
+                <Route
+                  path="faqs"
+                  element={
+                    // <ProtectedRoute permissions={["doctor."]}>
+                      <Faqs />
+                    // </ProtectedRoute>
+                  }
+                />
+
+                     {/* Features routes - require features permissions */}
+                <Route
+                  path="features"
+                  element={
+                    // <ProtectedRoute permissions={["doctor."]}>
+                      <Features />
+                    // </ProtectedRoute>
+                  }
+                />
+
+                     {/* Features Category routes - require features permissions */}
+                <Route
+                  path="feature-category"
+                  element={
+                    // <ProtectedRoute permissions={["doctor."]}>
+                      <FeatureCategory />
+                    // </ProtectedRoute>
+                  }
+                />
+
+                        {/* Trim Category routes - require trims permissions */}
+                <Route
+                  path="trims"
+                  element={
+                    // <ProtectedRoute permissions={["doctor."]}>
+                      <Trim />
+                    // </ProtectedRoute>
+                  }
+                />
+
                 {/* Users routes - require admin permissions */}
                 <Route
-                  path="users"
+                  path="admins"
                   element={
-                    <ProtectedRoute permissions={["admin."]}>
+                    // <ProtectedRoute permissions={["admin."]}>
                       <Users />
-                    </ProtectedRoute>
+                    // </ProtectedRoute>
                   }
                 />
 
@@ -83,9 +171,9 @@ const App = () => {
                 <Route
                   path="roles"
                   element={
-                    <ProtectedRoute permissions={["role."]}>
+                    // <ProtectedRoute permissions={["role."]}>
                       <Roles />
-                    </ProtectedRoute>
+                    // </ProtectedRoute>
                   }
                 />
 
@@ -93,9 +181,9 @@ const App = () => {
                 <Route
                   path="permissions"
                   element={
-                    <ProtectedRoute permissions={["permission."]}>
+                    // <ProtectedRoute permissions={["permission."]}>
                       <Permissions />
-                    </ProtectedRoute>
+                    // </ProtectedRoute>
                   }
                 />
 

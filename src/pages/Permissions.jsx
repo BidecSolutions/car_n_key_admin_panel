@@ -125,7 +125,7 @@ const Permissions = () => {
         }}
       >
         <h1>Permissions Management</h1>
-          {permissions.includes("permission.create") && (
+          {/* {permissions.includes("permission.create") && ( */}
 
         <Button
           type="primary"
@@ -134,7 +134,7 @@ const Permissions = () => {
         >
           Add Permission
         </Button>
-          )}
+          {/* )} */}
       </div>
 
       {/* Permissions Table */}

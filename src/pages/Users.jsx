@@ -80,10 +80,11 @@ const Users = () => {
     setFormLoading(true);
 
     const payload = {
-      name: values.name,
+      firstName: values.firstName,
+      lastName: values.lastName,
       email: values.email,
-      phone: values.phone,
-      status: values.status ? 1 : 0,
+      // phone: values.phone,
+      // status: values.status ? 1 : 0,
       // sirf add ke time password bhejna hai
       ...(editingUser ? {} : { password: values.password }),
     };
@@ -130,7 +131,7 @@ const Users = () => {
         }}
       >
         <h1>Users Management</h1>
-          {permissions?.includes("admin.create") && (
+          {/* {permissions?.includes("admin.create") && ( */}
         <Button
           type="primary"
           icon={<PlusOutlined />}
@@ -138,7 +139,7 @@ const Users = () => {
         >
           Add User
         </Button>
-          )}
+          {/* )} */}
       </div>
 
       {/* Users Table */}

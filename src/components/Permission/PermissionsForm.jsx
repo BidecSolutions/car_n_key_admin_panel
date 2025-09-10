@@ -24,7 +24,7 @@ const PermissionsForm = ({ visible, onCancel, onSubmit, initialValues = {}, load
     >
       {/* Module Name */}
       <Form.Item
-        name="module_name"
+        name="module"
         label="Module Name"
         rules={[{ required: true, message: 'Please enter permission name!' }]}
       >

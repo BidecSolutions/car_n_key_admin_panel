@@ -33,3 +33,6 @@ export const TIME_FORMAT = 'HH:mm';
 // Pagination defaults
 export const DEFAULT_PAGE_SIZE = 10;
 export const DEFAULT_CURRENT_PAGE = 1; 
+
+// Image Url
+export const Image_URL = import.meta.env.VITE_BASE_IMAGE_URL_LIVE;
